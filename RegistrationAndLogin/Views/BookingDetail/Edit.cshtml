@@ -1,0 +1,194 @@
+﻿@model RegistrationAndLogin.Models.BookingDetail
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>BookingDetail</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmailID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StylistName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{
+                List<SelectListItem> listItems = new List<SelectListItem>();
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Isabella",
+                    Value = "Isabella"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Sophia",
+                    Value = "Sophia"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Elizabeth",
+                    Value = "Elizabeth"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Victoria",
+                    Value = "Victoria"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Lily",
+                    Value = "Lily"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Stella",
+                    Value = "Stella"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Maya",
+                    Value = "Maya"
+                });
+            }
+            @Html.DropDownListFor(model => model.StylistName, listItems, "Select your Stylist", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.StylistName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StylistService, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{
+                List<SelectListItem> listItems2 = new List<SelectListItem>();
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Hair Color",
+                    Value = "Hair Color"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Hair Straightening",
+                    Value = "Hair Straightening"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Hair Cut",
+                    Value = "Hair Cut"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Hair Spa",
+                    Value = "Hair Spa"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Hair Styling",
+                    Value = "Hair Styling"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Bleaching",
+                    Value = "Bleaching"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Organic Facial",
+                    Value = "Organic Facial"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Threading",
+                    Value = "Threading"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Waxing",
+                    Value = "Waxing"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Pedicure",
+                    Value = "Pedicure"
+                });
+                listItems2.Add(new SelectListItem
+                {
+                    Text = "Manicure",
+                    Value = "Manicure"
+                });
+            }
+            @Html.DropDownListFor(model => model.StylistName, listItems2, "Service Needed", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.StylistName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateForBooking, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DateForBooking, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateForBooking, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TimeForBooking, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TimeForBooking, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TimeForBooking, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

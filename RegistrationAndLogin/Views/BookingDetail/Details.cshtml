@@ -1,0 +1,85 @@
+﻿@model RegistrationAndLogin.Models.BookingDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StylistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StylistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StylistService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StylistService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateForBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateForBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeForBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeForBooking)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
